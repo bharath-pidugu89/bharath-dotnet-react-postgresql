@@ -1,0 +1,30 @@
+@TaskManagementApp_HostAddress = http://localhost:5004
+
+GET {{TaskManagementApp_HostAddress}}/mytask
+Accept: application/json
+
+POST {{TaskManagementApp_HostAddress}}/mytask
+Content-Type: application/json
+
+{
+  "title": "Test task",
+  "description": "Test description",
+  "dueDate": "2026-12-01T00:00:00",
+  "status": "Pending",
+  "priority": "High"
+}
+
+PUT {{TaskManagementApp_HostAddress}}/mytask/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "Updated task",
+  "description": "Updated description",
+  "dueDate": "2026-12-01T00:00:00",
+  "status": "Completed",
+  "priority": "High"
+}
+
+DELETE {{TaskManagementApp_HostAddress}}/mytask/1
+###
